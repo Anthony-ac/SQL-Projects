@@ -42,3 +42,15 @@ SELECT * FROM salaries WHERE salary > 150000;
 SELECT COUNT(*) FROM salaries WHERE salary >= 100000;
 
 SELECT COUNT(*) FROM dept_manager;
+
+SELECT * FROM employees ORDER BY hire_date DESC;
+
+SELECT * FROM employees ORDER BY first_name, last_name ASC;
+
+SELECT first_name, COUNT(first_name) FROM employees GROUP BY first_name ORDER BY first_name, last_name ASC;
+
+SELECT salary, COUNT(emp_no) AS emps_with_same_salary FROM salaries WHERE salary > 80000 GROUP BY salary ORDER BY salary;
+
+SELECT emp_no, AVG(salary) FROM salaries GROUP BY emp_no HAVING AVG(salary) > 120000 ORDER BY emp_no;
+
+SELECT emp_no FROM dept_emp WHERE from_date > 2000-01-01 GROUP BY emp_no HAVING COUNT(emp_no) > 1 ORDER BY emp_no LIMIT 100;
