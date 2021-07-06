@@ -18,9 +18,9 @@ DROP PROCEDURE IF EXISTS AVG_Emp_Salary;
 DELIMITER $$
 CREATE PROCEDURE AVG_Emp_Salary(IN p_emp_no INTEGER)
 BEGIN
-	 SELECT ROUND(AVG(salary),2) AS AVG_Salary
-     FROM salaries
-     WHERE emp_no = p_emp_no;
+	SELECT ROUND(AVG(salary),2) AS AVG_Salary
+     	FROM salaries
+     	WHERE emp_no = p_emp_no;
 	
 END$$
 DELIMITER ;
